@@ -13,7 +13,7 @@ export default new Vuex.Store({
         projects: [
           {
             id: 1,
-            uuid: "xdbsdgh-46edfdf5-20dsnj10",
+            uuid: "sdufdyfg-45848fdf-21ksajbsj",
             title: "Montanhas",
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, provident illum doloremque inventore excepturi maiores quidem quo eius perspiciatis explicabo ipsa voluptatum nostrum incidunt minus aut soluta voluptatibus nam. Minima!",
@@ -181,7 +181,7 @@ export default new Vuex.Store({
       let item = {};
 
       for (let portfolio of state.portfolios) {
-        let itemSelected = portfolio.projects.find((el) => (el.uuid = uuid));
+        let itemSelected = portfolio.projects.find((el) => (el.uuid == uuid));
 
         if (itemSelected) {
           item = itemSelected;
