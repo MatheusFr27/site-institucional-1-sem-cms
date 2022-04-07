@@ -100,12 +100,83 @@
         </v-tab-item>
       </v-tabs>
     </Section>
-    <Section idSection="section-contato">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, adipisci
-      atque id veritatis consequuntur sequi voluptate perferendis vero, impedit
-      veniam minima eligendi nobis dignissimos nesciunt!</Section
+    <!-- Contato -->
+    <Section
+      idSection="section-contato"
+      title="CONTATO"
+      background="background-image-contact"
     >
-    <!-- <v-img alt="campo cinza" src="../assets/img/banner_bg.jpg" max-height="38em" /> -->
+      <v-row class="pa-6">
+        <v-col cols="6">
+          <form @submit.prevent="">
+            <div class="d-flex flex-column my-4">
+              <label class="white--text font-weight-semibold" for="name">{{
+                "Nome" | textUpperCase()
+              }}</label>
+              <v-text-field
+                solo
+                dense
+                single-line
+                hide-details
+                id="name"
+              ></v-text-field>
+            </div>
+            <div class="d-flex flex-column my-4">
+              <label class="white--text font-weight-semibold" for="email">{{
+                "email" | textUpperCase()
+              }}</label>
+              <v-text-field
+                solo
+                dense
+                single-line
+                hide-details
+                type="email"
+                id="email"
+              ></v-text-field>
+            </div>
+            <div class="d-flex flex-column my-4">
+              <label class="white--text font-weight-semibold" for="message">{{
+                "Mensagem" | textUpperCase()
+              }}</label>
+              <v-textarea
+                solo
+                dense
+                single-line
+                hide-details
+                type="text"
+                id="message"
+              ></v-textarea>
+
+              <v-btn
+                class="my-8"
+                :rounded="false"
+                :loading="loadingButtonContact"
+                :disabled="loadingButtonContact"
+                color="info"
+                type="submit"
+              >
+                Enviar
+                <template v-slot:loader>
+                  <span class="custom-loader">
+                    <v-icon light>mdi-cached</v-icon>
+                  </span>
+                </template>
+              </v-btn>
+            </div>
+          </form>
+        </v-col>
+        <v-col cols="6">
+          <div>
+            <p class="text-justify white--text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+              debitis necessitatibus pariatur dolores tempore harum ut maiores
+              aliquid doloremque atque ipsum reprehenderit nulla, voluptates
+              placeat expedita rerum repudiandae eligendi! Nobis.
+            </p>
+          </div>
+        </v-col>
+      </v-row>
+    </Section>
   </div>
 </template>
 
@@ -139,6 +210,7 @@ export default {
           img: "synchronize",
         },
       ],
+      loadingButtonContact: false,
     };
   },
   computed: {
@@ -173,6 +245,17 @@ export default {
   background-size: 100% 100%;
 }
 
+.background-image-contact {
+  width: 100%;
+  background: url(../assets/img/join_bg.jpg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
 .services-card {
   width: 30% !important;
 }
@@ -187,6 +270,44 @@ export default {
 
 .show-btns {
   color: rgba(255, 255, 255, 1) !important;
+}
+
+/* css do botão de contatos */
+.custom-loader {
+  animation: loader 1s infinite;
+  display: flex;
+}
+@-moz-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 959px) {
