@@ -181,7 +181,11 @@ export default new Vuex.Store({
       let item = {};
 
       for (let portfolio of state.portfolios) {
-        item = portfolio.projects.find((el) => (el.uuid = uuid));
+        let itemSelected = portfolio.projects.find((el) => (el.uuid = uuid));
+
+        if (itemSelected) {
+          item = itemSelected;
+        }
       }
 
       commit("SET_PROJECT_ITEM", item);
