@@ -30,6 +30,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      cycle: true,
+    };
+  },
   created() {
     this.$store.dispatch("setProjectItem", this.$route.params.uuid);
   },
