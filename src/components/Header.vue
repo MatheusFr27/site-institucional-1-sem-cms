@@ -2,12 +2,12 @@
   <v-app-bar height="95em" app color="blue-grey darken-3" dark>
     <router-link to="/">
       <v-img
-        alt="Vuetify Logo"
+        alt="Logo Fire lion IT"
         class="shrink ml-4"
         contain
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+        src="../assets/logo.png"
         transition="scale-transition"
-        width="40"
+        width="65"
       />
     </router-link>
 
