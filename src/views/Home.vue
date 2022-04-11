@@ -107,7 +107,7 @@
       background="background-image-contact"
     >
       <v-row class="pa-6">
-        <v-col cols="6">
+        <v-col cols="12" sm="12" md="12" lg="6" xl="6" tag="section">
           <form @submit.prevent="">
             <div class="d-flex flex-column my-4">
               <label class="white--text font-weight-semibold" for="name">{{
@@ -122,9 +122,10 @@
               ></v-text-field>
             </div>
             <div class="d-flex flex-column my-4">
-              <label class="white--text font-weight-semibold" for="email">{{
-                "email" | textUpperCase()
-              }}</label>
+              <label class="white--text font-weight-semibold" for="email"
+                >{{ "email" | textUpperCase() }}
+                <span class="red--text">*</span></label
+              >
               <v-text-field
                 solo
                 dense
@@ -135,9 +136,10 @@
               ></v-text-field>
             </div>
             <div class="d-flex flex-column my-4">
-              <label class="white--text font-weight-semibold" for="message">{{
-                "Mensagem" | textUpperCase()
-              }}</label>
+              <label class="white--text font-weight-semibold" for="message"
+                >{{ "Mensagem" | textUpperCase() }}
+                <span class="red--text">*</span></label
+              >
               <v-textarea
                 solo
                 dense
@@ -165,13 +167,35 @@
             </div>
           </form>
         </v-col>
-        <v-col cols="6">
-          <div>
-            <p class="text-justify white--text">
+        <v-col cols="12" sm="12" md="12" lg="6" xl="6" tag="section">
+          <div class="my-6 mx-5">
+            <p class="text-justify white--text text-body-1">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
               debitis necessitatibus pariatur dolores tempore harum ut maiores
               aliquid doloremque atque ipsum reprehenderit nulla, voluptates
               placeat expedita rerum repudiandae eligendi! Nobis.
+            </p>
+            <br />
+            <p class="white--text text-body-1">
+              500 Lorem Ipsum Dolor Sit, <br />
+              Telefone: (00) 22266-6444 <br />
+              Celular: (00) 22266-6444 <br />
+              Email: seuemail@email.com <br />
+              Follow on:
+              <a
+                class="white--text"
+                href="http://www.google.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Facebook</a
+              >,
+              <a
+                class="white--text"
+                href="http://www.google.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Twitter</a
+              >
             </p>
           </div>
         </v-col>
