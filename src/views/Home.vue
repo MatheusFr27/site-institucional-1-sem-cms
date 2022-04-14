@@ -5,7 +5,14 @@
       tag="section"
       height="37em"
       rounded="0"
-      class="background-image d-flex flex-column align-center justify-center px-14"
+      class="
+        background-image
+        d-flex
+        flex-column
+        align-center
+        justify-center
+        px-14
+      "
     >
       <v-card
         max-width="70%"
@@ -107,66 +114,11 @@
       background="background-image-contact"
     >
       <v-row class="pa-6">
+        <!-- Formulário -->
         <v-col cols="12" sm="12" md="12" lg="6" xl="6" tag="section">
-          <form @submit.prevent="">
-            <div class="d-flex flex-column my-4">
-              <label class="white--text font-weight-semibold" for="name">{{
-                "Nome" | textUpperCase()
-              }}</label>
-              <v-text-field
-                solo
-                dense
-                single-line
-                hide-details
-                id="name"
-              ></v-text-field>
-            </div>
-            <div class="d-flex flex-column my-4">
-              <label class="white--text font-weight-semibold" for="email"
-                >{{ "email" | textUpperCase() }}
-                <span class="red--text">*</span></label
-              >
-              <v-text-field
-                solo
-                dense
-                single-line
-                hide-details
-                type="email"
-                id="email"
-              ></v-text-field>
-            </div>
-            <div class="d-flex flex-column my-4">
-              <label class="white--text font-weight-semibold" for="message"
-                >{{ "Mensagem" | textUpperCase() }}
-                <span class="red--text">*</span></label
-              >
-              <v-textarea
-                solo
-                dense
-                single-line
-                hide-details
-                type="text"
-                id="message"
-              ></v-textarea>
-
-              <v-btn
-                class="my-8"
-                :rounded="false"
-                :loading="loadingButtonContact"
-                :disabled="loadingButtonContact"
-                color="info"
-                type="submit"
-              >
-                Enviar
-                <template v-slot:loader>
-                  <span class="custom-loader">
-                    <v-icon light>mdi-cached</v-icon>
-                  </span>
-                </template>
-              </v-btn>
-            </div>
-          </form>
+          <FormContact />
         </v-col>
+        <!-- Informações -->
         <v-col cols="12" sm="12" md="12" lg="6" xl="6" tag="section">
           <div class="my-6 mx-5">
             <p class="text-justify white--text text-body-1">
@@ -206,11 +158,13 @@
 
 <script>
 import Section from "../components/Section.vue";
+import FormContact from "../components/FormContact.vue";
 
 export default {
   name: "Home",
   components: {
     Section,
+    FormContact,
   },
   data() {
     return {
@@ -234,7 +188,6 @@ export default {
           img: "synchronize",
         },
       ],
-      loadingButtonContact: false,
     };
   },
   computed: {
@@ -294,44 +247,6 @@ export default {
 
 .show-btns {
   color: rgba(255, 255, 255, 1) !important;
-}
-
-/* css do botão de contatos */
-.custom-loader {
-  animation: loader 1s infinite;
-  display: flex;
-}
-@-moz-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-o-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @media (max-width: 959px) {
