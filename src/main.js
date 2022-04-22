@@ -5,6 +5,8 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 
 import "./plugins/scrollTo";
+import "./plugins/veeValidate";
+
 import "./filters";
 
 Vue.config.productionTip = false;
