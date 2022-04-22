@@ -23,12 +23,17 @@
         solo
         dense
         single-line
-        hide-details
         type="email"
         id="user_email"
         name="user_email"
         ref="user_email"
         v-model.trim="form.user_email"
+        data-vv-as="email"
+        persistent-hint
+        :hint="errors.first('user_email')"
+        :error="errors.collect('user_email').length ? true : false"
+        v-validate="'required|email'"
+        data-vv-validate-on="change"
       ></v-text-field>
     </div>
     <div class="d-flex flex-column my-4">
@@ -40,12 +45,17 @@
         solo
         dense
         single-line
-        hide-details
         type="text"
         id="message"
         name="message"
         ref="message"
         v-model.trim="form.message"
+        data-vv-as="mensagem"
+        persistent-hint
+        :hint="errors.first('message')"
+        :error="errors.collect('message').length ? true : false"
+        v-validate="'required|min:10'"
+        data-vv-validate-on="change"
       ></v-textarea>
 
       <v-btn
@@ -100,8 +110,9 @@ export default {
   },
   methods: {
     async sendEmail() {
-      if (this.validateForm()) return;
+      const resultValidate = await this.$validator.validateAll();
 
+      if (!resultValidate) return;
       this.loadingButtonContact = true;
 
       let typeAlert = "";
@@ -153,6 +164,7 @@ export default {
   animation: loader 1s infinite;
   display: flex;
 }
+
 @-moz-keyframes loader {
   from {
     transform: rotate(0);
