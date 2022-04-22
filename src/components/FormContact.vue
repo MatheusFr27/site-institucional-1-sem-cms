@@ -88,6 +88,8 @@
 import emailjs from "@emailjs/browser";
 import Alert from "./Alert.vue";
 
+import config from "../config";
+
 export default {
   name: "FormContact",
   components: {
@@ -119,10 +121,10 @@ export default {
       let textAlert = "";
       try {
         const result = await emailjs.sendForm(
-          "service_le5kctf",
-          "template_a0u47hi",
+          config.EMAIL_SERVICE_ID,
+          config.EMAIL_TEMPLATE_ID,
           this.$refs.formEmail,
-          "nDZCWfLZv49nMzOQR"
+          config.EMAIL_PUBLIC_KEY
         );
 
         typeAlert = result.status === 200 ? "success" : "error";
@@ -146,13 +148,6 @@ export default {
       this.form.user_name = "";
       this.form.user_email = "";
       this.form.message = "";
-    },
-    validateForm() {
-      if (!this.form.user_email || !this.form.message) {
-        return true;
-      }
-
-      return false;
     },
   },
 };
