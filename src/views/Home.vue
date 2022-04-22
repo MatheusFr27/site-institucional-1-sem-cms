@@ -3,7 +3,7 @@
     <v-card
       id="section-inicio"
       tag="section"
-      height="37em"
+      min-height="37em"
       rounded="0"
       class="
         background-image
@@ -12,15 +12,18 @@
         align-center
         justify-center
         px-14
+        py-4
       "
     >
       <v-card
-        max-width="70%"
+        min-width="70%"
+        max-width="90%"
+        height="auto"
         rounded="0"
         elevation="0"
-        color="greyBackground py-2 px-16"
+        color="greyBackground py-2 px-10 px-sm-16"
       >
-        <h1 class="white--text text-h4 text-center font-weight-thin">
+        <h1 class="white--text text-sm-h4 text-button text-center font-weight-thin">
           {{
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, quaerat?"
               | textUpperCase()
@@ -37,7 +40,7 @@
       <v-card
         v-for="service in services"
         :key="`service-${service.title}`"
-        class="d-flex flex-column align-center ma-3 transparent services-card"
+        class="d-flex flex-column align-center ma-0 ma-sm-3 transparent services-card"
         elevation="0"
         transition="slide-x-transition"
       >
