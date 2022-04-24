@@ -5,15 +5,7 @@
       tag="section"
       min-height="37em"
       rounded="0"
-      class="
-        background-image
-        d-flex
-        flex-column
-        align-center
-        justify-center
-        px-14
-        py-4
-      "
+      class="background-image d-flex flex-column align-center justify-center px-14 py-4"
     >
       <v-card
         min-width="70%"
@@ -23,7 +15,9 @@
         elevation="0"
         color="greyBackground py-2 px-10 px-sm-16"
       >
-        <h1 class="white--text text-sm-h4 text-button text-center font-weight-thin">
+        <h1
+          class="white--text text-sm-h4 text-button text-center font-weight-thin"
+        >
           {{
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, quaerat?"
               | textUpperCase()
@@ -90,14 +84,25 @@
                             align="center"
                             justify="center"
                           >
-                            <div>
+                            <v-card
+                              width="100%"
+                              class="d-flex flex-column justify-center align-center py-2"
+                              rounded="0"
+                            >
                               <v-icon
                                 style="z-index: 100 !important"
                                 x-large
                                 color="#4d79ff"
+                                class="text-shadow-1"
                                 >mdi-eye-arrow-left-outline</v-icon
                               >
-                            </div>
+                              <h5
+                                style="color: #4d79ff"
+                                class="text-h5 text-shadow-1"
+                              >
+                                {{ project.title }}
+                              </h5>
+                            </v-card>
                           </v-row>
                         </v-expand-x-transition>
                       </template>
@@ -216,7 +221,7 @@ export default {
 <style scoped>
 .background-image {
   width: 100%;
-  background: url(../assets/img/banner_bg.jpg) no-repeat;
+  background: url(../assets/img/city.jpg) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -227,7 +232,7 @@ export default {
 
 .background-image-contact {
   width: 100%;
-  background: url(../assets/img/join_bg.jpg) no-repeat;
+  background: url(../assets/img/road.jpg) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -250,6 +255,10 @@ export default {
 
 .show-btns {
   color: rgba(255, 255, 255, 1) !important;
+}
+
+.text-shadow-1 {
+  text-shadow: 0px 2px 2px #000000;
 }
 
 @media (max-width: 959px) {
