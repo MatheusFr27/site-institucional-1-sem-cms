@@ -1,28 +1,13 @@
-# site-institucional-1-sem-cms
+# **Site Institucional 1** (Sem CMS)
 
-## Project setup
+Site institucional desenvolvido a fim de demonstração e validação dos conhecimentos em programação Front-end com Vue.js, Vuetify, Html, Css e JS.
 
-```
-npm install
-```
+Sinta-se a vontade para copiar e fazer utilização do projeto como desejar.
 
-### Compiles and hot-reloads for development
+### Link de demonstração
+[Link para demonstração](https://site-demonstracao-1.netlify.app/)
 
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### Dependencies
+### Dependencias utilizadas
 
 - [Vue-scrollTo](https://www.npmjs.com/package/vue-scrollto);
 - [Vuetify](https://vuetifyjs.com/en/).
